@@ -33,6 +33,7 @@ class SearchModule: UIView {
     }
     
     func unwrappedView() {
+        searchField.becomeFirstResponder()
         searchButton.snp.updateConstraints { (make) in
             make.left.equalToSuperview().offset(Constants.searchIconLeftOffset)
             make.centerY.equalToSuperview()
@@ -55,6 +56,7 @@ class SearchModule: UIView {
             make.width.equalTo(20)
             make.height.equalTo(20)
         }
+        searchField.resignFirstResponder()
         searchField.placeholder = ""
     }
     
