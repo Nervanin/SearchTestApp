@@ -10,6 +10,7 @@ import UIKit
 
 class CatalogViewController: UIViewController {
     
+    var networkService = NetworkService()
     let searchView = SearchModule()
     lazy var collectionView = UICollectionView()
     let catalogName = UILabel()
@@ -18,6 +19,7 @@ class CatalogViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        networkService.sendRequest()
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(collectionView)
