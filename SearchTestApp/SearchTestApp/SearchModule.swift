@@ -15,6 +15,11 @@ class SearchModule: UIView {
         static let searchIconLeftOffset: CGFloat = 8
         static let searchIconTopOffset: CGFloat = 8
         static let searctFieldRightInset: CGFloat = 8
+        static let searchButtonSize: CGFloat = 25
+        static let searchButtonLowSize: CGFloat = 20
+        static let searchFieldOffset: CGFloat = 16
+        static let searchFieldInset: CGFloat = 8
+        
     }
     
     let searchField = UITextField()
@@ -37,14 +42,13 @@ class SearchModule: UIView {
         searchButton.snp.updateConstraints { (make) in
             make.left.equalToSuperview().offset(Constants.searchIconLeftOffset)
             make.centerY.equalToSuperview()
-            make.width.equalTo(25)
-            make.height.equalTo(25)
+            make.size.equalTo(Constants.searchButtonSize)
         }
         searchField.placeholder = "Поиск"
         searchField.snp.updateConstraints { (make) in
-            make.left.equalTo(searchButton.snp.right).offset(16)
+            make.left.equalTo(searchButton.snp.right).offset(Constants.searchFieldOffset)
             make.centerY.equalToSuperview()
-            make.right.equalToSuperview().inset(8)
+            make.right.equalToSuperview().inset(Constants.searctFieldRightInset)
         }
     }
     
@@ -53,8 +57,7 @@ class SearchModule: UIView {
         searchButton.snp.updateConstraints { (make) in
             make.left.equalToSuperview().offset(Constants.searchIconLeftOffset)
             make.centerY.equalToSuperview()
-            make.width.equalTo(20)
-            make.height.equalTo(20)
+            make.size.equalTo(Constants.searchButtonLowSize)
         }
         searchField.resignFirstResponder()
         searchField.placeholder = ""

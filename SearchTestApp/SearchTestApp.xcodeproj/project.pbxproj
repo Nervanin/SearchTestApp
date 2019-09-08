@@ -86,10 +86,10 @@
 				B53CAACB2324E0B400FD4A60 /* CatalogViewController.swift */,
 				B5920F17232574170070356F /* SearchButtonDelegate.swift */,
 				B53CAADD2324E64A00FD4A60 /* SearchModule.swift */,
+				B5920F1D23258AAC0070356F /* Networking.swift */,
 				B53CAAD02324E0B600FD4A60 /* Assets.xcassets */,
 				B53CAAD22324E0B600FD4A60 /* LaunchScreen.storyboard */,
 				B53CAAD52324E0B600FD4A60 /* Info.plist */,
-				B5920F1D23258AAC0070356F /* Networking.swift */,
 			);
 			path = SearchTestApp;
 			sourceTree = "<group>";
