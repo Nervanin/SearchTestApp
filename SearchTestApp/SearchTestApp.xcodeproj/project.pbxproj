@@ -11,6 +11,7 @@
 		B53CAACC2324E0B400FD4A60 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53CAACB2324E0B400FD4A60 /* CatalogViewController.swift */; };
 		B53CAAD12324E0B600FD4A60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53CAAD02324E0B600FD4A60 /* Assets.xcassets */; };
 		B53CAAD42324E0B600FD4A60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53CAAD22324E0B600FD4A60 /* LaunchScreen.storyboard */; };
+		B53CAADC2324E58F00FD4A60 /* CatalogDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53CAADB2324E58F00FD4A60 /* CatalogDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		B53CAAD02324E0B600FD4A60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B53CAAD32324E0B600FD4A60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B53CAAD52324E0B600FD4A60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B53CAADB2324E58F00FD4A60 /* CatalogDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				B53CAAC92324E0B400FD4A60 /* AppDelegate.swift */,
 				B53CAACB2324E0B400FD4A60 /* CatalogViewController.swift */,
+				B53CAADB2324E58F00FD4A60 /* CatalogDataSource.swift */,
 				B53CAAD02324E0B600FD4A60 /* Assets.xcassets */,
 				B53CAAD22324E0B600FD4A60 /* LaunchScreen.storyboard */,
 				B53CAAD52324E0B600FD4A60 /* Info.plist */,
@@ -133,6 +136,7 @@
 			files = (
 				B53CAACC2324E0B400FD4A60 /* CatalogViewController.swift in Sources */,
 				B53CAACA2324E0B400FD4A60 /* AppDelegate.swift in Sources */,
+				B53CAADC2324E58F00FD4A60 /* CatalogDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
