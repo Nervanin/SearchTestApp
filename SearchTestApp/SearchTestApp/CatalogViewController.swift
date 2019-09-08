@@ -11,7 +11,6 @@ import UIKit
 class CatalogViewController: UIViewController {
     
     let searchView = SearchModule()
-    let dataSource = CatalogDataSource()
     lazy var collectionView = UICollectionView()
    
     override func viewDidLoad() {
@@ -19,6 +18,8 @@ class CatalogViewController: UIViewController {
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         view.addSubview(collectionView)
+        searchView.searchButton.addTarget(self, action: #selector(searchButtonDidPressed), for: .touchUpInside)
+        searchView.delegate = self
         setGestureRecognizer()
         wrapedView()
     }
@@ -79,7 +80,12 @@ class CatalogViewController: UIViewController {
             }
         }
     }
+}
 
-
+extension CatalogViewController: SearchButtonProtocol {
+    @objc func searchButtonDidPressed() {
+        unwrapedView()
+        searchView.unwrappedView()
+    }
 }
 

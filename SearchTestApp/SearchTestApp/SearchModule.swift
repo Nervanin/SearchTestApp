@@ -19,6 +19,7 @@ class SearchModule: UIView {
     
     let searchField = UITextField()
     let searchButton = UIButton()
+    var delegate: SearchButtonProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,5 +56,10 @@ class SearchModule: UIView {
             make.height.equalTo(20)
         }
         searchField.placeholder = ""
+    }
+    
+    @objc func searchButtonDidPressed() {
+        unwrappedView()
+        delegate?.searchButtonDidPressed()
     }
 }

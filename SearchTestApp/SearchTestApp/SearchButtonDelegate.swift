@@ -1,13 +1,13 @@
 //
-//  CatalogDelegate.swift
+//  SearchButtonDelegate.swift
 //  SearchTestApp
 //
 //  Created by Konstantin on 08/09/2019.
 //  Copyright © 2019 Konstantin Meleshko. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class CatalogCollectionDelegate: NSObject, UICollectionViewDelegate {
-    
+protocol SearchButtonProtocol {
+    func searchButtonDidPressed()
 }
