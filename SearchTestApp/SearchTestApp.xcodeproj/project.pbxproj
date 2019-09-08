@@ -14,6 +14,7 @@
 		B53CAAD42324E0B600FD4A60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53CAAD22324E0B600FD4A60 /* LaunchScreen.storyboard */; };
 		B5920F14232501DB0070356F /* SearchModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53CAADD2324E64A00FD4A60 /* SearchModule.swift */; };
 		B5920F18232574170070356F /* SearchButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5920F17232574170070356F /* SearchButtonDelegate.swift */; };
+		B5920F272325AAF10070356F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5920F1D23258AAC0070356F /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B53CAAD52324E0B600FD4A60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53CAADD2324E64A00FD4A60 /* SearchModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModule.swift; sourceTree = "<group>"; };
 		B5920F17232574170070356F /* SearchButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonDelegate.swift; sourceTree = "<group>"; };
+		B5920F1D23258AAC0070356F /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		DB970C9B6CAFD5EA4556B32A /* Pods-SearchTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchTestApp.debug.xcconfig"; path = "Target Support Files/Pods-SearchTestApp/Pods-SearchTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FBA2B6C8EE39FBEBB25D03C2 /* Pods-SearchTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchTestApp.release.xcconfig"; path = "Target Support Files/Pods-SearchTestApp/Pods-SearchTestApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 				B53CAACB2324E0B400FD4A60 /* CatalogViewController.swift */,
 				B5920F17232574170070356F /* SearchButtonDelegate.swift */,
 				B53CAADD2324E64A00FD4A60 /* SearchModule.swift */,
+				B5920F1D23258AAC0070356F /* Networking.swift */,
 				B53CAAD02324E0B600FD4A60 /* Assets.xcassets */,
 				B53CAAD22324E0B600FD4A60 /* LaunchScreen.storyboard */,
 				B53CAAD52324E0B600FD4A60 /* Info.plist */,
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53CAACC2324E0B400FD4A60 /* CatalogViewController.swift in Sources */,
+				B5920F272325AAF10070356F /* Networking.swift in Sources */,
 				B5920F14232501DB0070356F /* SearchModule.swift in Sources */,
 				B5920F18232574170070356F /* SearchButtonDelegate.swift in Sources */,
 				B53CAACA2324E0B400FD4A60 /* AppDelegate.swift in Sources */,

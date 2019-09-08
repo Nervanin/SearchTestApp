@@ -10,6 +10,17 @@ import UIKit
 
 class CatalogViewController: UIViewController {
     
+    struct Constants {
+        static let searchViewOffset: CGFloat = 8
+        static let searchViewHeight: CGFloat = 56
+        static let searchViewLowHeight: CGFloat = 40
+        static let searchViewWidth: CGFloat = 16
+        static let catalogNameOffset: CGFloat = 8
+        static let subCatalogNameOffset: CGFloat = 8
+        static let clearButtonWidth: CGFloat = 100
+    }
+    
+    var networkService = NetworkService()
     let searchView = SearchModule()
     lazy var collectionView = UICollectionView()
     let catalogName = UILabel()
@@ -34,26 +45,26 @@ class CatalogViewController: UIViewController {
     
     func unwrapedView() {
         searchView.snp.updateConstraints { (make) in
-            make.left.equalToSuperview().offset(8)
-            make.top.equalToSuperview().offset(8)
-            make.height.equalTo(56)
-            make.width.equalTo(view.frame.width - 16)
+            make.left.equalToSuperview().offset(Constants.searchViewOffset)
+            make.top.equalToSuperview().offset(Constants.searchViewOffset)
+            make.height.equalTo(Constants.searchViewHeight)
+            make.width.equalTo(view.frame.width - Constants.searchViewWidth)
         }
         searchView.layer.borderColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         searchView.layer.borderWidth = 1
         searchView.layer.cornerRadius = 10
         searchView.layer.masksToBounds = true
         
-        catalogName.text = "Каталог"
+        catalogName.text = "Каталог ->"
         catalogName.snp.updateConstraints { (make) in
             make.left.equalTo(searchView.snp.left)
-            make.top.equalTo(searchView.snp.bottom).offset(8)
+            make.top.equalTo(searchView.snp.bottom).offset(Constants.catalogNameOffset)
         }
         
         subCatalogName.text = "Подкаталог"
         subCatalogName.snp.updateConstraints { (make) in
-            make.left.equalTo(catalogName.snp.right).offset(8)
-            make.top.equalTo(searchView.snp.bottom).offset(8)
+            make.left.equalTo(catalogName.snp.right).offset(Constants.subCatalogNameOffset)
+            make.top.equalTo(searchView.snp.bottom).offset(Constants.subCatalogNameOffset)
         }
         
         clearButton.isHidden = false
@@ -62,32 +73,30 @@ class CatalogViewController: UIViewController {
         clearButton.snp.updateConstraints { (make) in
             make.top.equalTo(searchView.snp.bottom)
             make.right.equalTo(searchView.snp.right)
-            //make.left.equalTo(subCatalogName.snp.right).offset(-16)
-            make.width.equalTo(100)
-           // make.height.equalTo(30)
+            make.width.equalTo(Constants.clearButtonWidth)
         }
 
     }
     
     func wrapedView() {
         searchView.snp.updateConstraints { (make) in
-            make.left.equalToSuperview().offset(8)
-            make.top.equalToSuperview().offset(8)
-            make.height.equalTo(40)
-            make.width.equalTo(view.frame.width - 16)
+            make.left.equalToSuperview().offset(Constants.searchViewOffset)
+            make.top.equalToSuperview().offset(Constants.searchViewOffset)
+            make.height.equalTo(Constants.searchViewLowHeight)
+            make.width.equalTo(view.frame.width - Constants.searchViewWidth)
         }
         searchView.layer.borderWidth = 0
         
-        catalogName.text = "Каталог"
+        catalogName.text = "Каталог ->"
         catalogName.snp.updateConstraints { (make) in
             make.left.equalTo(searchView.snp.left)
-            make.top.equalTo(searchView.snp.bottom).inset(8)
+            make.top.equalTo(searchView.snp.bottom).inset(Constants.catalogNameOffset)
         }
         
         subCatalogName.text = "Подкаталог"
         subCatalogName.snp.updateConstraints { (make) in
-            make.left.equalTo(catalogName.snp.right).offset(8)
-            make.top.equalTo(searchView.snp.bottom).inset(8)
+            make.left.equalTo(catalogName.snp.right).offset(Constants.subCatalogNameOffset)
+            make.top.equalTo(searchView.snp.bottom).inset(Constants.subCatalogNameOffset)
         }
         
         clearButton.isHidden = true
@@ -105,6 +114,10 @@ class CatalogViewController: UIViewController {
     }
     
     @objc func tapGestureRecognizer(gesture: UIGestureRecognizer) {
+        guard let parametr = searchView.searchField.text else {
+            return
+        }
+        networkService.sendRequest(parametr: parametr)
         wrapedView()
         searchView.wrappedView()
     }
